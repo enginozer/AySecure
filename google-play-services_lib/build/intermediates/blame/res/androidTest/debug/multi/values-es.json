@@ -1,0 +1,615 @@
+[
+    {
+        "outputFile": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-es\\values-es.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 154,
+                    "endOffset": 255
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 105,
+                        "endColumn": 154,
+                        "endOffset": 255
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 260,
+                    "endColumn": 164,
+                    "endOffset": 420
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 260,
+                        "endColumn": 164,
+                        "endOffset": 420
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 425,
+                    "endColumn": 160,
+                    "endOffset": 581
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 425,
+                        "endColumn": 160,
+                        "endOffset": 581
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 586,
+                    "endColumn": 142,
+                    "endOffset": 724
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 586,
+                        "endColumn": 142,
+                        "endOffset": 724
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 729,
+                    "endColumn": 135,
+                    "endOffset": 860
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 729,
+                        "endColumn": 135,
+                        "endOffset": 860
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 865,
+                    "endColumn": 169,
+                    "endOffset": 1030
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 865,
+                        "endColumn": 169,
+                        "endOffset": 1030
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 1035,
+                    "endColumn": 134,
+                    "endOffset": 1165
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 1035,
+                        "endColumn": 134,
+                        "endOffset": 1165
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1170,
+                    "endColumn": 173,
+                    "endOffset": 1339
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 1170,
+                        "endColumn": 173,
+                        "endOffset": 1339
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 1344,
+                    "endColumn": 132,
+                    "endOffset": 1472
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 1344,
+                        "endColumn": 132,
+                        "endOffset": 1472
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1477,
+                    "endColumn": 170,
+                    "endOffset": 1643
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1477,
+                        "endColumn": 170,
+                        "endOffset": 1643
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1648,
+                    "endColumn": 135,
+                    "endOffset": 1779
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1648,
+                        "endColumn": 135,
+                        "endOffset": 1779
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1784,
+                    "endColumn": 201,
+                    "endOffset": 1981
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1784,
+                        "endColumn": 201,
+                        "endOffset": 1981
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1986,
+                    "endColumn": 200,
+                    "endOffset": 2182
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1986,
+                        "endColumn": 200,
+                        "endOffset": 2182
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 2187,
+                    "endColumn": 132,
+                    "endOffset": 2315
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 2187,
+                        "endColumn": 132,
+                        "endOffset": 2315
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 2320,
+                    "endColumn": 184,
+                    "endOffset": 2500
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 2320,
+                        "endColumn": 184,
+                        "endOffset": 2500
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 2505,
+                    "endColumn": 124,
+                    "endOffset": 2625
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 2505,
+                        "endColumn": 124,
+                        "endOffset": 2625
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 2630,
+                    "endColumn": 177,
+                    "endOffset": 2803
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 2630,
+                        "endColumn": 177,
+                        "endOffset": 2803
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 2808,
+                    "endColumn": 197,
+                    "endOffset": 3001
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 2808,
+                        "endColumn": 197,
+                        "endOffset": 3001
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 3006,
+                    "endColumn": 118,
+                    "endOffset": 3120
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 3006,
+                        "endColumn": 118,
+                        "endOffset": 3120
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 3125,
+                    "endColumn": 191,
+                    "endOffset": 3312
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 3125,
+                        "endColumn": 191,
+                        "endOffset": 3312
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 3317,
+                    "endColumn": 188,
+                    "endOffset": 3501
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 3317,
+                        "endColumn": 188,
+                        "endOffset": 3501
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 3506,
+                    "endColumn": 139,
+                    "endOffset": 3641
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 3506,
+                        "endColumn": 139,
+                        "endOffset": 3641
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 3646,
+                    "endColumn": 162,
+                    "endOffset": 3804
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 3646,
+                        "endColumn": 162,
+                        "endOffset": 3804
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 3809,
+                    "endColumn": 171,
+                    "endOffset": 3976
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 3809,
+                        "endColumn": 171,
+                        "endOffset": 3976
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 3981,
+                    "endColumn": 267,
+                    "endOffset": 4244
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 3981,
+                        "endColumn": 267,
+                        "endOffset": 4244
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 4249,
+                    "endColumn": 128,
+                    "endOffset": 4373
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 4249,
+                        "endColumn": 128,
+                        "endOffset": 4373
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 4378,
+                    "endColumn": 110,
+                    "endOffset": 4484
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 4378,
+                        "endColumn": 110,
+                        "endOffset": 4484
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 4489,
+                    "endColumn": 175,
+                    "endOffset": 4660
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 4489,
+                        "endColumn": 175,
+                        "endOffset": 4660
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 4665,
+                    "endColumn": 134,
+                    "endOffset": 4795
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 4665,
+                        "endColumn": 134,
+                        "endOffset": 4795
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 4800,
+                    "endColumn": 98,
+                    "endOffset": 4894
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 4,
+                        "startOffset": 4800,
+                        "endColumn": 98,
+                        "endOffset": 4894
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 4899,
+                    "endColumn": 114,
+                    "endOffset": 5009
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 4899,
+                        "endColumn": 114,
+                        "endOffset": 5009
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 33,
+                    "startColumn": 4,
+                    "startOffset": 5014,
+                    "endColumn": 77,
+                    "endOffset": 5087
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\anyplace_release\\android\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 33,
+                        "startColumn": 4,
+                        "startOffset": 5014,
+                        "endColumn": 77,
+                        "endOffset": 5087
+                    }
+                }
+            }
+        ]
+    }
+]

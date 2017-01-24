@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="google-api-client-1.17.0-rc">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Anyplace/libs/google-api-client-1.17.0-rc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../Anyplace/libs-sources/google-api-client-1.17.0-rc-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
