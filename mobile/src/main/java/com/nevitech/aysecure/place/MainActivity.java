@@ -8,13 +8,12 @@ import com.google.android.gms.location.LocationRequest;
 import com.nevitech.aysecure.R;
 
 
-
 public class MainActivity extends AppCompatActivity {
 
     private static final double csLat                = 35.144569;
     private static final double csLon                = 33.411107;
     private static final float mInitialZoomLevel     = 19.0f;
-
+    public int aa;
     public static final String SHARED_PREFS_ANYPLACE = "Anyplace_Preferences";
 
     private final static int LOCATION_CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
