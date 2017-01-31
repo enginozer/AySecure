@@ -1,0 +1,596 @@
+[
+    {
+        "outputFile": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sl\\values-sl.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 153,
+                    "endOffset": 254
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 105,
+                        "endColumn": 153,
+                        "endOffset": 254
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 259,
+                    "endColumn": 157,
+                    "endOffset": 412
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 259,
+                        "endColumn": 157,
+                        "endOffset": 412
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 417,
+                    "endColumn": 152,
+                    "endOffset": 565
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 417,
+                        "endColumn": 152,
+                        "endOffset": 565
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 570,
+                    "endColumn": 132,
+                    "endOffset": 698
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 570,
+                        "endColumn": 132,
+                        "endOffset": 698
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 703,
+                    "endColumn": 141,
+                    "endOffset": 840
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 703,
+                        "endColumn": 141,
+                        "endOffset": 840
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 845,
+                    "endColumn": 167,
+                    "endOffset": 1008
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 845,
+                        "endColumn": 167,
+                        "endOffset": 1008
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 1013,
+                    "endColumn": 130,
+                    "endOffset": 1139
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 1013,
+                        "endColumn": 130,
+                        "endOffset": 1139
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1144,
+                    "endColumn": 162,
+                    "endOffset": 1302
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 1144,
+                        "endColumn": 162,
+                        "endOffset": 1302
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 1307,
+                    "endColumn": 128,
+                    "endOffset": 1431
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 1307,
+                        "endColumn": 128,
+                        "endOffset": 1431
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1436,
+                    "endColumn": 174,
+                    "endOffset": 1606
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1436,
+                        "endColumn": 174,
+                        "endOffset": 1606
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1611,
+                    "endColumn": 131,
+                    "endOffset": 1738
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1611,
+                        "endColumn": 131,
+                        "endOffset": 1738
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1743,
+                    "endColumn": 177,
+                    "endOffset": 1916
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1743,
+                        "endColumn": 177,
+                        "endOffset": 1916
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1921,
+                    "endColumn": 191,
+                    "endOffset": 2108
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1921,
+                        "endColumn": 191,
+                        "endOffset": 2108
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 2113,
+                    "endColumn": 128,
+                    "endOffset": 2237
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 2113,
+                        "endColumn": 128,
+                        "endOffset": 2237
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 2242,
+                    "endColumn": 165,
+                    "endOffset": 2403
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 2242,
+                        "endColumn": 165,
+                        "endOffset": 2403
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 2408,
+                    "endColumn": 124,
+                    "endOffset": 2528
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 2408,
+                        "endColumn": 124,
+                        "endOffset": 2528
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 2533,
+                    "endColumn": 169,
+                    "endOffset": 2698
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 2533,
+                        "endColumn": 169,
+                        "endOffset": 2698
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 2703,
+                    "endColumn": 174,
+                    "endOffset": 2873
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 2703,
+                        "endColumn": 174,
+                        "endOffset": 2873
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 2878,
+                    "endColumn": 120,
+                    "endOffset": 2994
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 2878,
+                        "endColumn": 120,
+                        "endOffset": 2994
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2999,
+                    "endColumn": 186,
+                    "endOffset": 3181
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2999,
+                        "endColumn": 186,
+                        "endOffset": 3181
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 3186,
+                    "endColumn": 181,
+                    "endOffset": 3363
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 3186,
+                        "endColumn": 181,
+                        "endOffset": 3363
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 3368,
+                    "endColumn": 133,
+                    "endOffset": 3497
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 3368,
+                        "endColumn": 133,
+                        "endOffset": 3497
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 3502,
+                    "endColumn": 140,
+                    "endOffset": 3638
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 3502,
+                        "endColumn": 140,
+                        "endOffset": 3638
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 3643,
+                    "endColumn": 163,
+                    "endOffset": 3802
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 3643,
+                        "endColumn": 163,
+                        "endOffset": 3802
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 3807,
+                    "endColumn": 232,
+                    "endOffset": 4035
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 3807,
+                        "endColumn": 232,
+                        "endOffset": 4035
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 4040,
+                    "endColumn": 124,
+                    "endOffset": 4160
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 4040,
+                        "endColumn": 124,
+                        "endOffset": 4160
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 4165,
+                    "endColumn": 108,
+                    "endOffset": 4269
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 4165,
+                        "endColumn": 108,
+                        "endOffset": 4269
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 4274,
+                    "endColumn": 160,
+                    "endOffset": 4430
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 4274,
+                        "endColumn": 160,
+                        "endOffset": 4430
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 4435,
+                    "endColumn": 130,
+                    "endOffset": 4561
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 4435,
+                        "endColumn": 130,
+                        "endOffset": 4561
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 4566,
+                    "endColumn": 91,
+                    "endOffset": 4653
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 4,
+                        "startOffset": 4566,
+                        "endColumn": 91,
+                        "endOffset": 4653
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 4658,
+                    "endColumn": 110,
+                    "endOffset": 4764
+                },
+                "from": {
+                    "file": "C:\\Users\\Emre\\Desktop\\Aysecure\\google-play-services_lib\\build\\intermediates\\bundles\\debug\\res\\values-sl\\values-sl.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 4658,
+                        "endColumn": 110,
+                        "endOffset": 4764
+                    }
+                }
+            }
+        ]
+    }
+]
