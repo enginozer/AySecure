@@ -6,16 +6,17 @@ package com.nevitech.aysecure.place.nav;
 import java.io.Serializable;
 
 public class PoisModel implements Serializable,IPoisClass
+
 {
-    public String puid;
-    public String buid;
-    public String name;
-    public String description = "";
-    public String lat = "0.0";
-    public String lng = "0.0";
-    public String floor_name;
-    public String floor_number;
-    public String pois_type;
+    public String  puid;
+    public String  buid;
+    public String  name;
+    public String  description = "";
+    public String  lat = "0.0";
+    public String  lng = "0.0";
+    public String  floor_name;
+    public String  floor_number;
+    public String  pois_type;
     public boolean is_building_entrance;
 
     public String toString()

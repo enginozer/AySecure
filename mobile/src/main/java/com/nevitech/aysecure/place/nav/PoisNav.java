@@ -5,6 +5,7 @@ package com.nevitech.aysecure.place.nav;
  */
 
 public class PoisNav
+
 {
     public String lat;
     public String lon;

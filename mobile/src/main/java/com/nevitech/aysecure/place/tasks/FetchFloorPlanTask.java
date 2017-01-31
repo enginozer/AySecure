@@ -41,11 +41,11 @@ public class FetchFloorPlanTask extends AsyncTask<Void,Void,String>
     }
 
     private FetchFloorPlanTaskListener mListener;
-    private Context ctx;
-    private String buid;
-    private String floor_number;
+    private Context                    ctx;
+    private String                     buid;
+    private String                     floor_number;
 
-    private File floor_plan_file;
+    private File                       floor_plan_file;
 
     private boolean success = false;
 
@@ -54,8 +54,8 @@ public class FetchFloorPlanTask extends AsyncTask<Void,Void,String>
     boolean run               = false;
 
     public FetchFloorPlanTask(Context ctx,
-                              String buid,
-                              String floor_number)
+                              String  buid,
+                              String  floor_number)
 
     {
 
@@ -181,7 +181,7 @@ public class FetchFloorPlanTask extends AsyncTask<Void,Void,String>
             j.put("username", "username");
             j.put("password", "pass");
 
-            is = NetworkUtils.downloadHttpClientJsonPostStream(NevitechAPI.getServeFloorTilesZipUrl(buid, floor_number), j.toString());
+            is       = NetworkUtils.downloadHttpClientJsonPostStream(NevitechAPI.getServeFloorTilesZipUrl(buid, floor_number), j.toString());
 
             tempFile = new File(ctx.getCacheDir(), "FloorPlan" + Integer.toString((int) (Math.random() * 100)));
 
@@ -225,7 +225,7 @@ public class FetchFloorPlanTask extends AsyncTask<Void,Void,String>
 
             floor_plan_file = dest_path;
             waitPreExecute();
-            success = true;
+            success         = true;
 
             return "Successfully fetched floor plan";
 

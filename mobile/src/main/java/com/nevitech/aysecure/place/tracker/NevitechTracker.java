@@ -122,15 +122,15 @@ public class NevitechTracker
 
     private List<ErrorAnyplaceTrackerListener> errorlisteners = new ArrayList<ErrorAnyplaceTrackerListener>(1);
 
-    public void addListener(ErrorAnyplaceTrackerListener list)
+    public void addListener(TrackerLogicPlusIMU.TrackerListener list)
 
     {
 
-        errorlisteners.add(list);
+        errorlisteners.add((ErrorAnyplaceTrackerListener) list);
 
     }
 
-    public void removeListener(ErrorAnyplaceTrackerListener list)
+    public void removeListener(TrackerLogicPlusIMU.TrackerListenerInit list)
 
     {
 

@@ -31,8 +31,8 @@ public interface IPoisClass
         private static final String PROP_NAME = "myClass";
 
         @Override
-        public JsonElement serialize(IPoisClass src,
-                                     java.lang.reflect.Type arg1,
+        public JsonElement serialize(IPoisClass               src,
+                                     java.lang.reflect.Type   arg1,
                                      JsonSerializationContext context)
 
         {
@@ -48,8 +48,8 @@ public interface IPoisClass
         }
 
         @Override
-        public IPoisClass deserialize(JsonElement json,
-                                      java.lang.reflect.Type arg1,
+        public IPoisClass deserialize(JsonElement                json,
+                                      java.lang.reflect.Type     arg1,
                                       JsonDeserializationContext context) throws JsonParseException
         {
 

@@ -39,11 +39,11 @@ public class DownloadRadioMapTaskBuid extends AsyncTask<Void,Void,String >
     private static volatile Boolean downInProgress = false;
 
     private DownloadRadioMapListener mListener;
-    private Context ctx;
-    private String json_req;
-    private String mBuildID;
-    private String mFloor_number;
-    private Boolean mForceDonwload;
+    private Context                  ctx;
+    private String                   json_req;
+    private String                   mBuildID;
+    private String                   mFloor_number;
+    private Boolean                  mForceDonwload;
 
     private boolean success = false;
 
@@ -61,15 +61,19 @@ public class DownloadRadioMapTaskBuid extends AsyncTask<Void,Void,String >
 
     {
 
-        this(mListener, ctx, buid, floor_number, forceDonwload);
+        this(mListener,
+                ctx,
+                buid,
+                floor_number,
+                forceDonwload);
 
     }
 
     public DownloadRadioMapTaskBuid(DownloadRadioMapListener mListener,
-                                    Context ctx,
-                                    String buid,
-                                    String floor_number,
-                                    boolean forceDonwload)
+                                    Context                  ctx,
+                                    String                   buid,
+                                    String                   floor_number,
+                                    boolean                  forceDonwload)
 
     {
 
@@ -139,7 +143,9 @@ public class DownloadRadioMapTaskBuid extends AsyncTask<Void,Void,String >
 
             {
 
-                root = NevitechUtils.getRadioMapFoler(ctx, mBuildID, mFloor_number);
+                root = NevitechUtils.getRadioMapFoler(ctx,
+                                                      mBuildID,
+                                                      mFloor_number);
 
             }
             catch (Exception e)
@@ -206,7 +212,7 @@ public class DownloadRadioMapTaskBuid extends AsyncTask<Void,Void,String >
             json_credentials.put("password", "pass");
             String cred_str = json_credentials.toString();
 
-            String ms = NetworkUtils.downloadHttpClientJsonPost(means, cred_str);
+            String ms       = NetworkUtils.downloadHttpClientJsonPost(means, cred_str);
 
             // check if the files downloaded correctly
             if (ms.contains("error"))

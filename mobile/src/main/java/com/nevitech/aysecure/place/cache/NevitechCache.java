@@ -35,7 +35,7 @@ public class NevitechCache
 
     private static NevitechCache mInstance = null;
 
-    public static NevitechCache getInstance(Context ctx)
+    public  static NevitechCache getInstance(Context ctx)
 
     {
 
@@ -88,7 +88,7 @@ public class NevitechCache
 
     // last fetched pois
     private Map<String, PoisModel> mLoadedPoisMap;
-    private String poisBUID;
+    private String                 poisBUID;
 
     private NevitechCache()
 
@@ -96,14 +96,14 @@ public class NevitechCache
         // last fetched Buildings
         this.mSpinnerBuildings = new ArrayList<BuildingModel>();
         // last fetched pois
-        this.mLoadedPoisMap = new HashMap<String, PoisModel>();
+        this.mLoadedPoisMap    = new HashMap<String, PoisModel>();
 
     }
 
     // </All Buildings
     public List<BuildingModel> loadWorldBuildings(final FetchBuildingsTaskListener fetchBuildingsTaskListener,
-                                                  Context ctx,
-                                                  Boolean forceReload)
+                                                  Context                          ctx,
+                                                  Boolean                          forceReload)
 
     {
 
@@ -116,7 +116,7 @@ public class NevitechCache
             {
 
                 @Override
-                public void onSuccess(String result,
+                public void onSuccess(String              result,
                                       List<BuildingModel> buildings)
 
                 {
@@ -152,9 +152,9 @@ public class NevitechCache
 
     }
 
-    public void loadBuilding(final String buid,
+    public void loadBuilding(final String                    buid,
                              final FetchBuildingTaskListener l,
-                             Context ctx)
+                             Context                         ctx)
 
     {
 
@@ -163,7 +163,7 @@ public class NevitechCache
         {
 
             @Override
-            public void onSuccess(String result,
+            public void onSuccess(String              result,
                                   List<BuildingModel> buildings)
 
             {
@@ -302,7 +302,7 @@ public class NevitechCache
     }
 
     public void setPois(Map<String, PoisModel> lpID,
-                        String poisBUID)
+                        String                 poisBUID)
 
     {
 
@@ -338,7 +338,7 @@ public class NevitechCache
     // />POIS
 
     public void fetchAllFloorsRadiomapsRun(BackgroundFetchListener l,
-                                           final BuildingModel build)
+                                     final BuildingModel           build)
 
     {
 
@@ -412,8 +412,8 @@ public class NevitechCache
     // />Fetch all Floor and Radiomaps of the current building
 
     // </SAVE CACHE
-    public static boolean saveObject(Context ctx,
-                                     File cacheDir,
+    public static boolean saveObject(Context       ctx,
+                                     File          cacheDir,
                                      NevitechCache obj)
     {
 
@@ -493,7 +493,7 @@ public class NevitechCache
     }
 
     public static NevitechCache getObject(Context ctx,
-                                          File cacheDir)
+                                          File    cacheDir)
 
     {
 

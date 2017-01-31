@@ -1,40 +1,78 @@
 package com.nevitech.aysecure.place;
 
-import android.support.v7.app.AppCompatActivity;
+
+
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
-import com.google.android.gms.location.LocationRequest;
+
 import com.nevitech.aysecure.R;
+import com.nevitech.aysecure.place.gps.GPSTracker;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
 
-    private static final double csLat                = 35.144569;
-    private static final double csLon                = 33.411107;
-    private static final float mInitialZoomLevel     = 19.0f;
-    public int aa;
-    public static final String SHARED_PREFS_ANYPLACE = "Anyplace_Preferences";
+{
 
-    private final static int LOCATION_CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
-    private final static int PLAY_SERVICES_RESOLUTION_REQUEST               = 9001;
-    private final static int SELECT_PLACE_ACTIVITY_RESULT                   = 1112;
-    private final static int SEARCH_POI_ACTIVITY_RESULT                     = 1113;
-    private final static int PREFERENCES_ACTIVITY_RESULT                    = 1114;
+    Button         btnGps;
+    TextView       latText;
+    TextView       lonText;
 
-    // Location API
-    private LocationClient mLocationClient;
-    // Define an object that holds accuracy and frequency parameters
-    private LocationRequest mLocationRequest;
+    GPSTracker     gpsTracker;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
+    public void onCreate(Bundle savedInstanceState)
 
     {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        latText = (TextView)findViewById(R.id.latText);
+        lonText = (TextView)findViewById(R.id.lonText);
+        btnGps  = (Button)findViewById(R.id.btnGPSBul);
+
+        btnGps.setOnClickListener(new View.OnClickListener()
+
+        {
+
+            @Override
+            public void onClick(View v)
+
+            {
+
+                gpsTracker=new GPSTracker(MainActivity.this);
+
+                if(gpsTracker.canGetLocation())
+
+                {
+
+                    double latitude  = gpsTracker.getLatitude();
+                    double longitude = gpsTracker.getLongitude();
+                    String lat       = latitude+"";
+                    String lon       = longitude+"";
+
+                    latText.setText(lat);
+                    lonText.setText(lon);
+                    //Toast.makeText(getApplicationContext(),"enlem   :"+latitude+"boylam  :"+longitude,Toast.LENGTH_SHORT).show();
+
+                }
+                else
+
+                {
+                    gpsTracker.showSettingsAlert();
+
+                }
+
+            }
+
+        });
+
     }
+
 
 }

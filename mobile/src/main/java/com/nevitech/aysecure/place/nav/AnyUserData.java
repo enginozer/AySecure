@@ -13,6 +13,7 @@ import com.nevitech.aysecure.place.NevitechAPI;
 import com.nevitech.aysecure.place.utils.GeoPoint;
 
 public class AnyUserData
+
 {
     private FloorModel selectedFloor       = null;
 

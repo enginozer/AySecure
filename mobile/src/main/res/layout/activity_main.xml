@@ -11,8 +11,39 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.nevitech.aysecure.place.MainActivity">
 
-    <TextView
+    <Button
+        android:text="KonumBul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:layout_marginLeft="19dp" android:layout_marginStart="19dp"
+        android:layout_marginBottom="18dp" android:id="@+id/btnGPSBul"
+        android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+    <TextView
+        android:text="ENLEM:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/btnGPSBul" android:layout_alignStart="@+id/btnGPSBul"
+        android:layout_marginTop="63dp" android:id="@+id/textView"/>
+    <TextView
+        android:text="BOYLAM:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView" android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="35dp" android:id="@+id/textView2"/>
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_alignTop="@+id/textView"
+        android:layout_toRightOf="@+id/btnGPSBul"
+        android:id="@+id/latText" android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lonText"
+        android:layout_alignBaseline="@+id/textView2" android:layout_alignBottom="@+id/textView2"
+        android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/latText" android:layout_alignStart="@+id/latText"/>
 </RelativeLayout>

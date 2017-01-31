@@ -38,20 +38,20 @@ public class FetchFloorsByBuidTask extends AsyncTask<Void,Void,String>
     }
 
     private FetchFloorsByBuidTaskListener mListener;
-    private Context ctx;
+    private Context                       ctx;
 
     private List<FloorModel> floors = new ArrayList<FloorModel>();
 
-    private String buid;
+    private String  buid;
 
     private boolean success = false;
 
     private ProgressDialog dialog;
-    private Boolean showDialog = true;
+    private Boolean        showDialog = true;
 
     public FetchFloorsByBuidTask(FetchFloorsByBuidTaskListener fetchFloorsByBuidTaskListener,
-                                 Context ctx,
-                                 String buid)
+                                 Context                       ctx,
+                                 String                        buid)
 
     {
 
@@ -62,9 +62,9 @@ public class FetchFloorsByBuidTask extends AsyncTask<Void,Void,String>
     }
 
     public FetchFloorsByBuidTask(FetchFloorsByBuidTaskListener fetchFloorsByBuidTaskListener,
-                                 Context ctx,
-                                 String buid,
-                                 Boolean showDialog)
+                                 Context                       ctx,
+                                 String                        buid,
+                                 Boolean                       showDialog)
 
     {
 
@@ -174,20 +174,20 @@ public class FetchFloorsByBuidTask extends AsyncTask<Void,Void,String>
 
             {
 
-                JSONObject cp = (JSONObject) buids_json.get(i);
+                JSONObject cp  = (JSONObject) buids_json.get(i);
 
-                b = new FloorModel();
-                b.buid = cp.getString("buid");
-                b.floor_name = cp.getString("floor_name");
+                b              = new FloorModel();
+                b.buid         = cp.getString("buid");
+                b.floor_name   = cp.getString("floor_name");
                 b.floor_number = cp.getString("floor_number");
-                b.description = cp.getString("description");
+                b.description  = cp.getString("description");
 
                 // use optString() because these values might not exist of a
                 // floor plan has not been set for this floor
                 b.bottom_left_lat = cp.optString("bottom_left_lat");
                 b.bottom_left_lng = cp.optString("bottom_left_lng");
-                b.top_right_lat = cp.optString("top_right_lat");
-                b.top_right_lng = cp.optString("top_right_lng");
+                b.top_right_lat   = cp.optString("top_right_lat");
+                b.top_right_lng   = cp.optString("top_right_lng");
 
                 floors.add(b);
 

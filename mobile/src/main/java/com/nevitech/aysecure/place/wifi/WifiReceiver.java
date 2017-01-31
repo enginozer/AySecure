@@ -11,7 +11,7 @@ public class WifiReceiver extends BroadcastReceiver
 {
     @Override
     public void onReceive(Context paramContext,
-                          Intent paramIntent)
+                          Intent  paramIntent)
 
     {
 
