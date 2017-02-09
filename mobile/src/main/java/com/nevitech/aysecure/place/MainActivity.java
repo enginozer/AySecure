@@ -13,6 +13,7 @@ import android.widget.Button;
 
 import com.nevitech.aysecure.R;
 import com.nevitech.aysecure.place.logger.NevitechLoggerActivity;
+import com.nevitech.aysecure.place.wifi.SimpleWifiManager;
 
 
 public class MainActivity extends AppCompatActivity
@@ -28,12 +29,14 @@ public class MainActivity extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SimpleWifiManager.getInstance().startScan();
+
         b1=(Button)findViewById(R.id.btnGPSBul);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                Intent i=new Intent(MainActivity.this, NevitechLoggerActivity.class);
+                Intent i=new Intent(getApplicationContext(), NevitechLoggerActivity.class);
                 startActivity(i);
             }
         });

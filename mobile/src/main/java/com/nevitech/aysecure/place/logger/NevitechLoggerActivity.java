@@ -1,14 +1,20 @@
 package com.nevitech.aysecure.place.logger;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.wifi.ScanResult;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -16,11 +22,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.flurry.android.FlurryAgent;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesClient;
+import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.maps.model.LatLng;
 import com.nevitech.aysecure.R;
+import com.nevitech.aysecure.place.NevitechAPI;
+import com.nevitech.aysecure.place.nav.AnyUserData;
 import com.nevitech.aysecure.place.nav.BuildingModel;
 import com.nevitech.aysecure.place.sensors.MovementDetector;
 import com.nevitech.aysecure.place.sensors.SensorsMain;
+import com.nevitech.aysecure.place.utils.GeoPoint;
 import com.nevitech.aysecure.place.wifi.SimpleWifiManager;
 import com.nevitech.aysecure.place.wifi.WifiReceiver;
 
@@ -32,7 +46,7 @@ import java.util.List;
  * Created by Emre on 8.2.2017.
  */
 
-public class NevitechLoggerActivity extends Activity
+public class NevitechLoggerActivity extends Activity implements GooglePlayServicesClient.ConnectionCallbacks, GooglePlayServicesClient.OnConnectionFailedListener, SharedPreferences.OnSharedPreferenceChangeListener
 
 {
     public static final String     SHARED_PREFS_LOGGER  = "LoggerPreferences";
@@ -43,12 +57,12 @@ public class NevitechLoggerActivity extends Activity
     private LocationRequest        mLocationRequest;
 
     private TextView               mTrackingInfoView    = null;
-    private TextView               scanResults;
+    private LatLng                 curLocation          = null;
     private Button                 btnRecord;
+    private String                 folder_path;
+    private String                 filename_rss;
 
 
-    private MovementDetector  movementDetector;
-    private SensorsMain       positioning;
     private ProgressDialog    mSamplingProgressDialog;
     private SimpleWifiManager wifi;
     private WifiReceiver      receiverWifi;
@@ -56,7 +70,7 @@ public class NevitechLoggerActivity extends Activity
     private SharedPreferences preferences;
 
     private BuildingModel     mCurrentBuilding  = null;
-
+    private LocationClient    mLocationClient;
 
     @Override
     public void onCreate(Bundle bundle)
@@ -65,7 +79,7 @@ public class NevitechLoggerActivity extends Activity
 
         super.onCreate(bundle);
         setContentView(R.layout.log);
-
+        checkPermission();
         btnRecord = (Button) findViewById(R.id.recordBtn);
 
         btnRecord.setOnClickListener(new View.OnClickListener()
@@ -75,99 +89,11 @@ public class NevitechLoggerActivity extends Activity
             public void onClick(View v)
 
             {
-                //btnRecordingInfo();
+
+                btnRecordingInfo();
             }
 
         });
-
-        ImageButton btnFloorUp = (ImageButton) findViewById(R.id.btnFloorUp);
-
-        btnFloorUp.setOnClickListener(new View.OnClickListener()
-
-        {
-
-            @Override
-            public void onClick(View v)
-
-            {
-
-
-                if (mCurrentBuilding == null)
-
-                {
-
-                    Toast.makeText(getBaseContext(), "Load a map before tracking can be used!", Toast.LENGTH_SHORT).show();
-                    return;
-
-                }
-
-                if (mIsSamplingActive)
-
-                {
-
-                    Toast.makeText(getBaseContext(), "Invalid during logging.", Toast.LENGTH_LONG).show();
-                    return;
-
-                }
-
-                // Move one floor up
-                int index = mCurrentBuilding.getSelectedFloorIndex();
-
-                if (mCurrentBuilding.checkIndex(index + 1))
-
-                {
-
-                   // bypassSelectBuildingActivity(mCurrentBuilding, mCurrentBuilding.getFloors().get(index + 1));
-                }
-
-            }
-
-        });
-
-        ImageButton btnFloorDown = (ImageButton) findViewById(R.id.btnFloorDown);
-
-        btnFloorDown.setOnClickListener(new View.OnClickListener()
-
-        {
-
-            @Override
-            public void onClick(View v)
-
-            {
-
-                if (mCurrentBuilding == null)
-
-                {
-
-                    Toast.makeText(getBaseContext(), "Load a map before tracking can be used!", Toast.LENGTH_SHORT).show();
-                    return;
-
-                }
-
-                if (mIsSamplingActive)
-
-                {
-
-                    Toast.makeText(getBaseContext(), "Invalid during logging.", Toast.LENGTH_LONG).show();
-                    return;
-
-                }
-
-                // Move one floor down
-                int index = mCurrentBuilding.getSelectedFloorIndex();
-
-                if (mCurrentBuilding.checkIndex(index - 1))
-
-                {
-                   // bypassSelectBuildingActivity(mCurrentBuilding, mCurrentBuilding.getFloors().get(index - 1));
-                }
-
-            }
-
-        });
-
-        scanResults       = (TextView) findViewById(R.id.detectedAPs);
-        mTrackingInfoView = (TextView) findViewById(R.id.trackingInfoData);
 
 		/*
 		 * Create a new location client, using the enclosing class to handle
@@ -181,6 +107,7 @@ public class NevitechLoggerActivity extends Activity
         mLocationRequest.setInterval(2000);
         // Set the fastest update interval to 1 second
         mLocationRequest.setFastestInterval(1000);
+        mLocationClient = new LocationClient(this, this, this);
 
         PreferenceManager.setDefaultValues(this,
                                            SHARED_PREFS_LOGGER,
@@ -189,7 +116,7 @@ public class NevitechLoggerActivity extends Activity
                                            true);
 
         preferences = getSharedPreferences(SHARED_PREFS_LOGGER, MODE_PRIVATE);
-        preferences.registerOnSharedPreferenceChangeListener((SharedPreferences.OnSharedPreferenceChangeListener) this);
+        preferences.registerOnSharedPreferenceChangeListener( this);
         onSharedPreferenceChanged(preferences, "walk_bar");
 
         String folder_browser = preferences.getString("folder_browser", null);
@@ -229,10 +156,6 @@ public class NevitechLoggerActivity extends Activity
         wifi.registerScan(receiverWifi);
         wifi.startScan(preferences.getString("samples_interval", "1000"));
 
-        positioning      = new SensorsMain(this);
-        movementDetector = new MovementDetector();
-        positioning.addListener(movementDetector);
-
         AnyPlaceLoggerReceiver mSamplingAnyplaceLoggerReceiver = new AnyPlaceLoggerReceiver();
         logger = new LoggerWiFi(mSamplingAnyplaceLoggerReceiver);
 
@@ -265,6 +188,16 @@ public class NevitechLoggerActivity extends Activity
         }
 
     }
+    public void checkPermission(){
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                ){//Can add more as per requirement
+
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION},
+                    123);
+        }
+    }
     private void updateInfoView()
 
     {
@@ -290,8 +223,138 @@ public class NevitechLoggerActivity extends Activity
         mTrackingInfoView.setText(sb.toString());
 
     }
+    private void btnRecordingInfo()
+
+    {
+
+        if (mIsSamplingActive)
+
+        {
+
+            mIsSamplingActive = false;
+            mSamplingProgressDialog = new ProgressDialog(NevitechLoggerActivity.this);
+            mSamplingProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            mSamplingProgressDialog.setMessage("Saving...");
+            mSamplingProgressDialog.setCancelable(false);
+            mSamplingProgressDialog.show();
+
+            saveRecordingToLine(curLocation);
+
+        }
+        else
+
+        {
+
+            startRecordingInfo();
+
+        }
+
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        wifi.unregisterScan(receiverWifi);
+    }
+    private void startRecordingInfo() {
 
 
+
+        // avoid recording when no floor has been selected
+        curLocation=new LatLng(40.917932 ,29.3103284); // teknopark konumu el ile eklendi..
+
+        if (curLocation == null) {
+            Toast.makeText(getBaseContext(), "Click a position before recording...", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        boolean hasGPS = getPackageManager().hasSystemFeature(PackageManager.FEATURE_LOCATION_GPS);
+        if(hasGPS) {
+            if(true) {
+                LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                boolean statusOfGPS = manager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+                if (statusOfGPS == false) {
+                    Toast.makeText(this, "Please enable GPS", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                final GeoPoint gps;
+                if (NevitechAPI.DEBUG_WIFI) {
+                    gps = AnyUserData.fakeGPS();
+                } else {
+                    Location location = mLocationClient.getLastLocation();
+                    if (location == null) {
+                        Toast.makeText(this, "Waiting for a valid GPS signal", Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    gps = new GeoPoint(location.getLatitude(), location.getLongitude());
+                }
+
+              //  mCurrentBuilding.longitude,mCurrentBuilding.latitude değerleri yerine manuel olarak değerler girildi..
+
+                if (GeoPoint.getDistanceBetweenPoints(40.917932, 29.3103284, gps.dlon, gps.dlat, "") < 200) {
+                    Toast.makeText(getBaseContext(), "You are only allowed to use the logger for a building you are currently at or physically nearby.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+            }
+        }
+
+        folder_path = (String) preferences.getString("folder_browser", "n/a");
+        if (folder_path.equals("n/a") || folder_path.equals("")) {
+            toastPrint("Folder path not specified\nGo to Menu::Preferences::Storing Settings::Folder", Toast.LENGTH_LONG);
+            return;
+
+        } else if ((!(new File(folder_path).canWrite()))) {
+            toastPrint("Folder path is not writable\nGo to Menu::Preferences::Storing Settings::Folder", Toast.LENGTH_LONG);
+            return;
+        }
+
+        filename_rss = (String) preferences.getString("filename_log", "n/a");
+        if (filename_rss.equals("n/a") || filename_rss.equals("")) {
+            toastPrint("Filename of RSS log not specified\nGo to Menu::Preferences::Storing Settings::Filename", Toast.LENGTH_LONG);
+            return;
+        }
+
+
+        // start the TASK
+        mIsSamplingActive = true;
+    }
+
+    private void saveRecordingToLine(LatLng latlng) {
+
+        logger.save(latlng.latitude + "," + latlng.longitude, folder_path, filename_rss, "1", mCurrentBuilding.buid);
+
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mLocationClient.connect();
+
+        // Flurry Analytics
+        if (NevitechAPI.FLURRY_ENABLE) {
+            FlurryAgent.onStartSession(this, NevitechAPI.FLURRY_APIKEY);
+        }
+    }
+
+    @Override
+    public void onConnected(Bundle bundle) {
+
+    }
+
+    @Override
+    public void onDisconnected() {
+
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+
+    }
+    protected void toastPrint(String textMSG, int duration) {
+        Toast.makeText(this, textMSG, duration).show();
+    }
 
     public class AnyPlaceLoggerReceiver implements LoggerWiFi.Callback
 
@@ -446,7 +509,7 @@ public class NevitechLoggerActivity extends Activity
 
 
                 List<ScanResult> wifiList = wifi.getScanResults();
-                scanResults.setText("AP : " + wifiList.size());
+
 
                 // If we are not in an active sampling session we have to skip
                 // this intent
