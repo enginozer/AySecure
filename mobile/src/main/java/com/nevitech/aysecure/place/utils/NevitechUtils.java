@@ -85,7 +85,7 @@ public class NevitechUtils
 
     {
 
-        return "fl_" + (floor == null ? "-" : floor) + "_indoor-radiomap.txt";
+        return "fl_" + "emre"+ "_indoor-radiomap.txt";
 
     }
 

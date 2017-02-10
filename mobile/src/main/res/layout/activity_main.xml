@@ -19,14 +19,5 @@
         android:layout_marginBottom="18dp" android:id="@+id/btnGPSBul"
         android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_alignParentTop="true" android:layout_alignLeft="@+id/btnGPSBul"
-        android:layout_alignStart="@+id/btnGPSBul" android:layout_marginTop="39dp"
-        android:id="@+id/editText"/>
 
 </RelativeLayout>

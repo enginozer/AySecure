@@ -1,3 +1,4 @@
+
 package com.nevitech.aysecure.place.logger;
 
 import android.Manifest;
@@ -49,28 +50,33 @@ import java.util.List;
 public class NevitechLoggerActivity extends Activity implements GooglePlayServicesClient.ConnectionCallbacks, GooglePlayServicesClient.OnConnectionFailedListener, SharedPreferences.OnSharedPreferenceChangeListener
 
 {
-    public static final String     SHARED_PREFS_LOGGER  = "LoggerPreferences";
-    private                        LoggerWiFi logger;
-    private float                  raw_heading          = 0.0f;
-    private boolean                walking              = false;
-    private int                    mCurrentSamplesTaken = 0;
-    private LocationRequest        mLocationRequest;
+    public static final String SHARED_PREFS_LOGGER = "LoggerPreferences";
+    private LoggerWiFi logger;
+    private float raw_heading = 0.0f;
+    private boolean walking = false;
+    private int mCurrentSamplesTaken = 0;
+    private LocationRequest mLocationRequest;
 
-    private TextView               mTrackingInfoView    = null;
-    private LatLng                 curLocation          = null;
-    private Button                 btnRecord;
-    private String                 folder_path;
-    private String                 filename_rss;
+    private TextView mTrackingInfoView = null;
+    private LatLng curLocation = null;
+    private Button btnRecord;
+    private String folder_path_;
+    private String filename_rss_;
 
 
-    private ProgressDialog    mSamplingProgressDialog;
+    private ProgressDialog mSamplingProgressDialog;
     private SimpleWifiManager wifi;
-    private WifiReceiver      receiverWifi;
-    private boolean           mIsSamplingActive = false;
+    private WifiReceiver receiverWifi;
+    private boolean mIsSamplingActive = false;
     private SharedPreferences preferences;
 
-    private BuildingModel     mCurrentBuilding  = null;
-    private LocationClient    mLocationClient;
+    private BuildingModel mCurrentBuilding = null;
+    private LocationClient mLocationClient;
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
 
     @Override
     public void onCreate(Bundle bundle)
@@ -80,6 +86,7 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
         super.onCreate(bundle);
         setContentView(R.layout.log);
         checkPermission();
+        verifyStoragePermissions(this);
         btnRecord = (Button) findViewById(R.id.recordBtn);
 
         btnRecord.setOnClickListener(new View.OnClickListener()
@@ -110,13 +117,13 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
         mLocationClient = new LocationClient(this, this, this);
 
         PreferenceManager.setDefaultValues(this,
-                                           SHARED_PREFS_LOGGER,
-                                           MODE_PRIVATE,
-                                           R.xml.preferences_logger,
-                                           true);
+                SHARED_PREFS_LOGGER,
+                MODE_PRIVATE,
+                R.xml.preferences_logger,
+                true);
 
         preferences = getSharedPreferences(SHARED_PREFS_LOGGER, MODE_PRIVATE);
-        preferences.registerOnSharedPreferenceChangeListener( this);
+        preferences.registerOnSharedPreferenceChangeListener(this);
         onSharedPreferenceChanged(preferences, "walk_bar");
 
         String folder_browser = preferences.getString("folder_browser", null);
@@ -132,15 +139,14 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
 
             {
 
-                String                   path   = f.getAbsolutePath();
+                String path = f.getAbsolutePath();
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("folder_browser", path);
                 editor.commit();
 
             }
 
-        }
-        else
+        } else
 
         {
 
@@ -162,8 +168,22 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
 
     }
 
+    public static void verifyStoragePermissions(Activity activity) {
+        // Check if we have write permission
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE
+            );
+        }
+    }
+
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
-                                          String            key)
+                                          String key)
 
     {
         // TODO Auto-generated method stub
@@ -173,13 +193,10 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
         {
 
             int sensitivity = sharedPreferences.getInt("walk_bar", 26);
-            int max         = Integer.parseInt(getResources().getString(R.string.walk_bar_max));
+            int max = Integer.parseInt(getResources().getString(R.string.walk_bar_max));
             MovementDetector.setSensitivity(max - sensitivity);
 
-        }
-        else
-
-        if (key.equals("samples_interval"))
+        } else if (key.equals("samples_interval"))
 
         {
 
@@ -188,28 +205,30 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
         }
 
     }
-    public void checkPermission(){
+
+    public void checkPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
-                ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                ){//Can add more as per requirement
+                ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                ) {//Can add more as per requirement
 
             ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION},
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
                     123);
         }
     }
+
     private void updateInfoView()
 
     {
 
         StringBuilder sb = new StringBuilder();
         sb.append("Lat[ ");
-       // if (curLocation != null)
-       //     sb.append(curLocation.latitude);
+        // if (curLocation != null)
+        //     sb.append(curLocation.latitude);
         sb.append(" ]");
         sb.append("\nLon[ ");
-       // if (curLocation != null)
-       //     sb.append(curLocation.longitude);
+        // if (curLocation != null)
+        //     sb.append(curLocation.longitude);
         sb.append(" ]");
         sb.append("\nHeading[ ");
         sb.append(String.format("%.2f", raw_heading));
@@ -223,6 +242,7 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
         mTrackingInfoView.setText(sb.toString());
 
     }
+
     private void btnRecordingInfo()
 
     {
@@ -240,8 +260,7 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
 
             saveRecordingToLine(curLocation);
 
-        }
-        else
+        } else
 
         {
 
@@ -250,18 +269,19 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
         }
 
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
         wifi.unregisterScan(receiverWifi);
     }
+
     private void startRecordingInfo() {
 
 
-
         // avoid recording when no floor has been selected
-        curLocation=new LatLng(40.917932 ,29.3103284); // teknopark konumu el ile eklendi..
+        curLocation = new LatLng(40.917932, 29.3103284); // teknopark konumu el ile eklendi..
 
         if (curLocation == null) {
             Toast.makeText(getBaseContext(), "Click a position before recording...", Toast.LENGTH_SHORT).show();
@@ -269,8 +289,8 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
         }
 
         boolean hasGPS = getPackageManager().hasSystemFeature(PackageManager.FEATURE_LOCATION_GPS);
-        if(hasGPS) {
-            if(true) {
+        if (hasGPS) {
+            if (true) {
                 LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 boolean statusOfGPS = manager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
@@ -291,7 +311,7 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
                     gps = new GeoPoint(location.getLatitude(), location.getLongitude());
                 }
 
-              //  mCurrentBuilding.longitude,mCurrentBuilding.latitude değerleri yerine manuel olarak değerler girildi..
+                //  mCurrentBuilding.longitude,mCurrentBuilding.latitude değerleri yerine manuel olarak değerler girildi..
 
                 if (GeoPoint.getDistanceBetweenPoints(40.917932, 29.3103284, gps.dlon, gps.dlat, "") < 200) {
                     Toast.makeText(getBaseContext(), "You are only allowed to use the logger for a building you are currently at or physically nearby.", Toast.LENGTH_SHORT).show();
@@ -301,17 +321,23 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
             }
         }
 
-        folder_path = (String) preferences.getString("folder_browser", "n/a");
+        //Intent data = this.getIntent();
+        //LoggerPrefs.Action result = (LoggerPrefs.Action) data.getSerializableExtra("action");
+        File folder_path = new File(Environment.getExternalStorageDirectory() + File.separator + "Aysecure");
+// have the object build the directory structure, if needed.
+        folder_path_ = folder_path.toString();
+
         if (folder_path.equals("n/a") || folder_path.equals("")) {
             toastPrint("Folder path not specified\nGo to Menu::Preferences::Storing Settings::Folder", Toast.LENGTH_LONG);
             return;
 
-        } else if ((!(new File(folder_path).canWrite()))) {
+        } else if ((!(new File(String.valueOf(folder_path)).canWrite()))) {
             toastPrint("Folder path is not writable\nGo to Menu::Preferences::Storing Settings::Folder", Toast.LENGTH_LONG);
             return;
         }
 
-        filename_rss = (String) preferences.getString("filename_log", "n/a");
+        File filename_rss = new File(folder_path + "deneme.txt"); //(String) preferences.getString("RSS_Log", "n/a");
+        filename_rss_ = filename_rss.toString();
         if (filename_rss.equals("n/a") || filename_rss.equals("")) {
             toastPrint("Filename of RSS log not specified\nGo to Menu::Preferences::Storing Settings::Filename", Toast.LENGTH_LONG);
             return;
@@ -324,9 +350,10 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
 
     private void saveRecordingToLine(LatLng latlng) {
 
-        logger.save(latlng.latitude + "," + latlng.longitude, folder_path, filename_rss, "1", mCurrentBuilding.buid);
+        logger.save(latlng.latitude + "," + latlng.longitude, folder_path_, filename_rss_, "1", mCurrentBuilding.buid);
 
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -352,6 +379,7 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
     public void onConnectionFailed(ConnectionResult connectionResult) {
 
     }
+
     protected void toastPrint(String textMSG, int duration) {
         Toast.makeText(this, textMSG, duration).show();
     }
@@ -361,7 +389,7 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
     {
 
         @Override
-        public void onFinish(LoggerWiFi          logger,
+        public void onFinish(LoggerWiFi logger,
                              LoggerWiFi.Function function)
 
         {
@@ -384,15 +412,13 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
 
                 });
 
-            }
-            else
-            if (function == LoggerWiFi.Function.SAVE)
+            } else if (function == LoggerWiFi.Function.SAVE)
 
             {
 
-                final boolean                            exceptionOccured = logger.exceptionOccured;
-                final String                             msg              = logger.msg;
-                final ArrayList<ArrayList<LogRecordMap>> mSamples         = logger.mSamples;
+                final boolean exceptionOccured = logger.exceptionOccured;
+                final String msg = logger.msg;
+                final ArrayList<ArrayList<LogRecordMap>> mSamples = logger.mSamples;
 
                 runOnUiThread(new Runnable()
 
@@ -410,8 +436,7 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
                             Toast.makeText(NevitechLoggerActivity.this, msg, Toast.LENGTH_LONG).show();
                             return;
 
-                        }
-                        else
+                        } else
 
                         {
 
@@ -434,12 +459,11 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
                                     if (records.get(0).walking)
 
                                     {
-                                      //  LatLng latlng = new LatLng(prevSample.get(0).lat, prevSample.get(0).lng);
-                                       // draw(latlng, sum);
+                                        //  LatLng latlng = new LatLng(prevSample.get(0).lat, prevSample.get(0).lng);
+                                        // draw(latlng, sum);
                                         prevSample = records;
 
-                                    }
-                                    else
+                                    } else
 
                                     {
                                         if (sum < 10)
@@ -454,7 +478,7 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
 
                                 }
 
-                              //  LatLng latlng = new LatLng(prevSample.get(0).lat, prevSample.get(0).lng);
+                                //  LatLng latlng = new LatLng(prevSample.get(0).lat, prevSample.get(0).lng);
                                 //draw(latlng, sum);
                             }
 
@@ -470,8 +494,8 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
 
                             mSamplingProgressDialog.dismiss();
                             mSamplingProgressDialog = null;
-                          //  enableRecordButton();
-                          //  showHelp("Help", "When you are done logging, click \"Menu\" -> \"Upload\"");
+                            //  enableRecordButton();
+                            //  showHelp("Help", "When you are done logging, click \"Menu\" -> \"Upload\"");
 
                         }
 
@@ -521,11 +545,10 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
                 {
                     mCurrentSamplesTaken++;
 
-                    logger.add(wifiList, 0+" , "+0/*curLocation.latitude + "," + curLocation.longitude*/, raw_heading, walking);
+                    logger.add(wifiList, 0 + " , " + 0/*curLocation.latitude + "," + curLocation.longitude*/, raw_heading, walking);
 
                 }
-            }
-            catch (RuntimeException e)
+            } catch (RuntimeException e)
 
             {
                 Toast.makeText(c, "RuntimeException [" + e.getMessage() + "]", Toast.LENGTH_SHORT).show();
@@ -536,5 +559,4 @@ public class NevitechLoggerActivity extends Activity implements GooglePlayServic
         }
 
     }
-
 }
